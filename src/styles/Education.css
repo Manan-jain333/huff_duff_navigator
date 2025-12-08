@@ -1,0 +1,149 @@
+.education-section {
+  background: var(--bg-dark);
+}
+
+.education-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary-color), transparent);
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 40px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 3px solid var(--bg-dark);
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.education-content {
+  background: rgba(100, 255, 218, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.education-content:hover {
+  background: rgba(100, 255, 218, 0.1);
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(100, 255, 218, 0.1);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.institution-name {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.education-period {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  background: rgba(100, 255, 218, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.degree {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.location {
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location i {
+  color: var(--primary-color);
+}
+
+.performance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.cgpa,
+.percentage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cgpa i,
+.percentage i {
+  color: var(--primary-color);
+}
+
+.status-badge {
+  background: rgba(100, 255, 218, 0.2);
+  color: var(--primary-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .education-timeline {
+    padding-left: 20px;
+  }
+
+  .education-item {
+    padding-left: 30px;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .institution-name {
+    font-size: 1.2rem;
+  }
+
+  .degree {
+    font-size: 1rem;
+  }
+}
+
+
