@@ -2180,18 +2180,45 @@
                 ease: 'power2.out'
             });
 
-            gsap.from('.highlight-item', {
-                scrollTrigger: {
-                    trigger: '.highlights',
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                scale: 0.8,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'back.out(1.7)'
-            });
+            // Animate highlight items - but make them visible immediately if already in view
+            const highlightItems = document.querySelectorAll('.highlight-item');
+            if (highlightItems.length > 0) {
+                const highlightsContainer = document.querySelector('.highlights');
+                const rect = highlightsContainer.getBoundingClientRect();
+                const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isInView) {
+                    // If highlights are already in view, animate them immediately without ScrollTrigger
+                    gsap.fromTo(highlightItems,
+                        { opacity: 0, scale: 0.8 },
+                        {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.5,
+                            stagger: 0.1,
+                            delay: 1.2,
+                            ease: 'back.out(1.7)'
+                        }
+                    );
+                } else {
+                    // If highlights are not in view, use ScrollTrigger
+                    gsap.fromTo(highlightItems,
+                        { opacity: 0, scale: 0.8 },
+                        {
+                            scrollTrigger: {
+                                trigger: '.highlights',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            },
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.5,
+                            stagger: 0.1,
+                            ease: 'back.out(1.7)'
+                        }
+                    );
+                }
+            }
 
             // Animate buttons - but make them visible immediately if already in view
             const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
