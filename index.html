@@ -975,33 +975,55 @@
             }
 
             .about-content {
-                gap: 40px;
+                gap: 30px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-text {
+                order: 1;
+                width: 100%;
+            }
+
+            .about-image {
+                order: 2;
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .greeting {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                margin-bottom: 8px;
             }
 
             .name {
-                font-size: 2.2rem;
-                margin-bottom: 15px;
+                font-size: 2rem;
+                margin-bottom: 12px;
+                line-height: 1.1;
             }
 
             .title {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 flex-direction: column;
                 gap: 5px;
+                margin-bottom: 8px;
+            }
+
+            .title-text {
+                font-size: 1rem;
             }
 
             .subtitle {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 margin-bottom: 20px;
             }
 
             .description {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 25px;
+                font-size: 0.9rem;
+                line-height: 1.7;
+                margin-bottom: 20px;
+                text-align: left;
             }
 
             .description p {
@@ -1010,28 +1032,32 @@
 
             .highlights {
                 justify-content: center;
-                gap: 15px;
-                margin-bottom: 30px;
+                gap: 10px;
+                margin-bottom: 25px;
+                flex-wrap: wrap;
             }
 
             .highlight-item {
-                padding: 8px 16px;
-                font-size: 0.85rem;
+                padding: 6px 14px;
+                font-size: 0.8rem;
             }
 
             .cta-buttons {
                 justify-content: center;
-                gap: 15px;
+                gap: 12px;
+                flex-wrap: wrap;
             }
 
             .btn {
-                padding: 10px 25px;
-                font-size: 0.9rem;
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 200px;
             }
 
             .profile-placeholder {
-                width: 250px;
-                height: 250px;
+                width: 220px;
+                height: 220px;
                 margin: 0 auto;
             }
 
