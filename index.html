@@ -953,6 +953,292 @@
             .skills-container {
                 grid-template-columns: 1fr;
             }
+
+            .skill-category:nth-child(4),
+            .skill-category:nth-child(5) {
+                grid-column: span 1;
+            }
+
+            /* Additional Mobile Improvements */
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+
+            /* About Section Mobile */
+            .about-section {
+                padding-top: calc(var(--nav-height) + 30px);
+            }
+
+            .about-content {
+                gap: 40px;
+            }
+
+            .greeting {
+                font-size: 1rem;
+            }
+
+            .name {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 1.1rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 25px;
+            }
+
+            .description p {
+                margin-bottom: 12px;
+            }
+
+            .highlights {
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+
+            .highlight-item {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .profile-placeholder {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+            }
+
+            /* Section Titles Mobile */
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+            }
+
+            .title-number {
+                font-size: 1.2rem;
+                margin-right: 10px;
+            }
+
+            .title-text {
+                font-size: 1.5rem;
+            }
+
+            /* Experience Section Mobile */
+            .experience-timeline {
+                padding-left: 20px;
+            }
+
+            .experience-item {
+                padding-left: 30px;
+                margin-bottom: 40px;
+            }
+
+            .experience-content {
+                padding: 20px;
+            }
+
+            .company-name {
+                font-size: 1.2rem;
+            }
+
+            .role {
+                font-size: 1rem;
+            }
+
+            .responsibilities li {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* Projects Section Mobile */
+            .projects-grid {
+                gap: 25px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            .project-name {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .tech-tag {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+            }
+
+            /* Skills Section Mobile */
+            .skills-container {
+                gap: 20px;
+            }
+
+            .skill-category {
+                padding: 20px;
+            }
+
+            .category-title {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .skill-item {
+                font-size: 0.9rem;
+                padding: 6px;
+            }
+
+            /* Education Section Mobile */
+            .education-timeline {
+                padding-left: 20px;
+            }
+
+            .education-item {
+                padding-left: 30px;
+                margin-bottom: 40px;
+            }
+
+            .education-content {
+                padding: 20px;
+            }
+
+            .institution-name {
+                font-size: 1.2rem;
+            }
+
+            .degree {
+                font-size: 1rem;
+            }
+
+            /* Certificates Section Mobile */
+            .certificates-grid {
+                gap: 25px;
+            }
+
+            .certificate-card {
+                padding: 20px;
+            }
+
+            .certificate-icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+
+            .certificate-name {
+                font-size: 1rem;
+            }
+
+            /* Contact Section Mobile */
+            .contact-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-item {
+                padding: 20px;
+            }
+
+            .contact-description {
+                font-size: 0.95rem;
+                margin-bottom: 40px;
+            }
+
+            .footer {
+                font-size: 0.85rem;
+                padding-top: 30px;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .profile-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .highlight-item {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+
+            .experience-content,
+            .education-content,
+            .project-card,
+            .certificate-card,
+            .skill-category,
+            .contact-item {
+                padding: 15px;
+            }
         }
     </style>
 </head>
