@@ -27,4 +27,27 @@ yarn-error.log*
 *.swo
 *~
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Flask
+instance/
+.webassets-cache
+
+# Images (optional - uncomment if you don't want to commit images)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
 

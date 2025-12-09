@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "framework": null,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "huff_duff_navigator/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "huff_duff_navigator/app.py"
     }
   ]
 }
-

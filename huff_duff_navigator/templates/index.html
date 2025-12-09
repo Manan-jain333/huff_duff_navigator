@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huff-Duff: The Bennett Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="login-card">
+                <div class="logo">
+                    <h1>🧭 Huff-Duff</h1>
+                    <p class="subtitle">The Bennett Navigator</p>
+                </div>
+                
+                <!-- Toggle between Login and Sign Up -->
+                <div class="auth-toggle">
+                    <button id="login-tab" class="auth-tab active">Login</button>
+                    <button id="signup-tab" class="auth-tab">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="enrollment_no">Enrollment Number</label>
+                        <input type="text" id="enrollment_no" name="enrollment_no" required placeholder="E.g., E22CSEU1199">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter 4-digit password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-enrollment_no">Enrollment Number</label>
+                        <input type="text" id="signup-enrollment_no" name="enrollment_no" required placeholder="E.g., E22CSEU1199">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required placeholder="Enter 4-digit password">
+                        <small class="form-hint">Password must be exactly 4 digits (any 4 digits)</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+                
+                <div id="login-error" class="error-message"></div>
+                <div id="signup-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Navigation Screen -->
+        <div id="nav-screen" class="screen">
+            <div class="nav-header">
+                <h2>Welcome, <span id="user-name"></span>!</h2>
+                <div class="header-actions">
+                    <button id="admin-dashboard-btn" class="btn btn-admin hidden">Admin Dashboard</button>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+            
+            <!-- Admin Dashboard -->
+            <div id="admin-dashboard" class="admin-dashboard hidden">
+                <div class="admin-section">
+                    <h3>👥 User Login History</h3>
+                    <div id="users-list" class="admin-table-container">
+                        <p>Loading users...</p>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>💬 User Feedback</h3>
+                    <div id="feedback-list" class="admin-table-container">
+                        <p>Loading feedback...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-content">
+                <div class="selection-card">
+                    <h3>Find Your Classroom</h3>
+                    
+                    <div class="form-group">
+                        <label for="block-select">Select Block</label>
+                        <select id="block-select" required>
+                            <option value="">Choose a block...</option>
+                            <option value="A">Block A</option>
+                            <option value="B">Block B</option>
+                            <option value="N">Block N</option>
+                            <option value="P">Block P</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classroom-input">Classroom Number</label>
+                        <input type="text" id="classroom-input" required placeholder="E.g., B-202, A-301">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Preferred Route</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="preference" value="lift" checked>
+                                <span>电梯 Lift</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="preference" value="stairs">
+                                <span>🪜 Stairs</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="find-path-btn" class="btn btn-primary">Find Path</button>
+                </div>
+
+                <div id="path-result" class="path-result hidden">
+                    <h3>Your Navigation Path</h3>
+                    <div class="path-info">
+                        <div class="info-item">
+                            <span class="label">Distance:</span>
+                            <span id="path-distance" class="value">-</span> units
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Steps:</span>
+                            <span id="path-steps" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Route:</span>
+                            <span id="path-route" class="value">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="path-visualization">
+                        <h4>Step-by-Step Directions</h4>
+                        <ol id="path-steps-list" class="steps-list"></ol>
+                    </div>
+                    
+                    <div class="map-container">
+                        <h4>Visual Map</h4>
+                        <div id="map-display" class="map-display">
+                            <div class="map-placeholder">
+                                <p>Map visualization will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="path-error" class="error-message"></div>
+                    
+                    <!-- Feedback Section -->
+                    <div class="feedback-section">
+                        <h4>Share Your Feedback</h4>
+                        <textarea id="feedback-input" rows="4" placeholder="Tell us about your experience using Huff-Duff Navigator..."></textarea>
+                        <button id="submit-feedback-btn" class="btn btn-primary">Submit Feedback</button>
+                        <div id="feedback-message" class="success-message hidden"></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+
