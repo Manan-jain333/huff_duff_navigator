@@ -45,9 +45,9 @@ node_modules/
 *.swo
 *~
 
-# Image files (if not needed in repo)
-*.jpg
-*.jpeg
-*.png
-*.gif
+# Image files - Keep these for deployment
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
 
