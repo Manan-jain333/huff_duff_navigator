@@ -757,9 +757,8 @@ function displayMap(path, preference) {
     routeInfo.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
     routeInfo.innerHTML = `
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-            <span style="font-size: 1.5em;">${preference === 'lift' ? '🛗' : '🪜'}</span>
             <strong style="color: #212529; font-size: 1.05em;">Route Preference:</strong> 
-            <span style="color: #495057; font-weight: 600; font-size: 1.05em;">${preference === 'lift' ? '电梯 Lift' : 'Stairs'}</span>
+            <span style="color: #495057; font-weight: 600; font-size: 1.05em;">${preference === 'lift' ? 'Lift' : 'Stairs'}</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
             <span style="font-size: 1.5em;">📍</span>
@@ -842,13 +841,13 @@ function displayMap(path, preference) {
             stepDiv.style.color = '#e65100';
             stepDiv.style.border = '2px solid #ff9800';
             stepDiv.style.fontWeight = '600';
-            stepDiv.textContent = '🛗 Lift';
+            stepDiv.textContent = 'Lift';
         } else if (step.includes('stairs')) {
             stepDiv.style.background = '#e0f7fa';
             stepDiv.style.color = '#006064';
             stepDiv.style.border = '2px solid #00acc1';
             stepDiv.style.fontWeight = '600';
-            stepDiv.textContent = '🪜 Stairs';
+            stepDiv.textContent = 'Stairs';
         } else if (step.includes('floor')) {
             stepDiv.style.background = '#e3f2fd';
             stepDiv.style.color = '#0d47a1';
@@ -1702,7 +1701,7 @@ function drawCommonFloorElements(ctx, layout, preference, destination = null) {
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 11px Arial';
     ctx.textAlign = 'center';
-    ctx.fillText(preference === 'lift' ? '🛗 LIFT' : '🪜 STAIRS', liftStairsX + 30, liftStairsY + 20);
+    ctx.fillText(preference === 'lift' ? 'LIFT' : 'STAIRS', liftStairsX + 30, liftStairsY + 20);
     ctx.font = '10px Arial';
     ctx.fillText('EXIT', liftStairsX + 30, liftStairsY + 32);
     
